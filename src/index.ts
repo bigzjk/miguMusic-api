@@ -13,14 +13,12 @@
 // const express = require('express')
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import router from './router'
+const Router = express.Router()
+// import router from './router'
+const apiList = require('./apiList/index')
 const app = express()
-
 const port = 3000
 
-const a:number = 123;
-const b:string = '123'
-console.log(a+b)
 app.use('/node_modules/', express.static('../node_modules/'))
 app.use('/public/', express.static('../public/'))
 
@@ -28,13 +26,15 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 // app.set('views', '../views')
+
 app.use((req, res, next) => {
     res.set('Access-Control-Allow-Origin', '*')
     next()
 })
 
+app.use(apiList(Router))
 /* 挂载路由 */
-app.use(router)
+// app.use(router)
 
 /* 监听端口启动服务 */
 app.listen(port, ()=>{

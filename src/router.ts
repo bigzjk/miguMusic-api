@@ -11,6 +11,7 @@ import * as express from 'express';
 const router = express.Router()
 // const axios = require('axios')
 const request = require('./utils/request')
+const apiList = require('./apiList/index')
 
 let apiHost = 'http://m.music.migu.cn/migu/remoting/cms_list_tag?pageSize=10&nid=23831003&pageNo=0&type=2006'
 
@@ -33,9 +34,10 @@ router
         // axios.defaults.headers['Origin'] =  '*'
         let resp = await request({
             type: 'get',
-            url: '/cms_list_tag/cms_list_tag?pageSize=10&nid=23831003&pageNo=0&type=2006',
+            url: '/cms_list_tag/cms_list_tag?nid=23831003&type=2006&pageNo=0&pageSize=10',
             // data: req.query
         })
+        // resp.data.hahah="hahahah"
         res.send(resp.data)
        
     })

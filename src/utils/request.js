@@ -1,5 +1,6 @@
 const axios = require('axios')
 const { userAgent } = require('./userAgent')
+
 module.exports = (opt) =>{
     let paramsInfo = {
         baseURL: 'http://m.music.migu.cn/migu/remoting',
@@ -15,6 +16,5 @@ module.exports = (opt) =>{
     } else {
         paramsInfo.data = opt.data
     }
-    
     return axios(paramsInfo)
 }
