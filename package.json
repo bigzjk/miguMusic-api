@@ -1,0 +1,44 @@
+{
+  "name": "migumusic-api",
+  "version": "1.0.0",
+  "description": "node实现转发咪咕音乐api",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "cd src && nodemon index.js",
+    "nodedev": "cd src && ts-node-dev index.ts",
+    "tsnode": "ts-node src/index.ts",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigzjk/miguMusic-api.git"
+  },
+  "author": "alkun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigzjk/miguMusic-api/issues"
+  },
+  "homepage": "https://github.com/bigzjk/miguMusic-api#readme",
+  "dependencies": {
+    "@types/express": "^4.17.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.8",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "typescript": "^3.5.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
