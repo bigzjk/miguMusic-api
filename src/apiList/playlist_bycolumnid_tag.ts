@@ -1,19 +1,20 @@
 /**
- * @todo 推荐歌单首页推荐模块
- * @api /client_play_list_tag
+ * @todo 歌单
+ * @api /playlist_bycolumnid_tag
  * @param {string} nid
  * @param {string} type
+ * ?playListType=2&type=1&columnId=15127315&tagId=&startIndex=0
  */
 module.exports = (app) => {
-    app.get('/cms_list_tag', async (req, res) => {
+    app.get('/playlist_bycolumnid_tag', async (req, res) => {
         try {
             let result = await app.request({
-                // url: "/cms_list_tag",
+                // url: "/playlist_bycolumnid_tag",
                 // ?nid=23831003&type=2006&pageNo=0&pageSize=10
-                url: "cms_list_tag",
+                url: "playlist_bycolumnid_tag",
                 data: { 
-                    nid: req.query.nid,
-                    type: req.query.type
+                    columnId: req.query.columnId,
+                    playListType: req.query.playListType
                 }
             })
             // console.log(result.data)

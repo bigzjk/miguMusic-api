@@ -17,7 +17,7 @@ const Router = express.Router()
 // import router from './router'
 const apiList = require('./apiList/index')
 const app = express()
-const port = 3000
+const port = process.env.port || 3456
 
 app.use('/node_modules/', express.static('../node_modules/'))
 app.use('/public/', express.static('../public/'))
@@ -28,12 +28,12 @@ app.use(bodyParser.json())
 // app.set('views', '../views')
 
 app.use((req, res, next) => {
+    // 防跨域问题
     res.set('Access-Control-Allow-Origin', '*')
     next()
 })
-
-app.use(apiList(Router))
 /* 挂载路由 */
+app.use(apiList(Router))
 // app.use(router)
 
 /* 监听端口启动服务 */
