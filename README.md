@@ -1,5 +1,6 @@
 # miguMusic-api
 node + ts 实现转发咪咕音乐api
+http://m.music.migu.cn/v3
 ## 使用教程
 ```js
     $ git clone https://github.com/bigzjk/miguMusic-api.git
