@@ -5,7 +5,7 @@ node + ts 实现转发咪咕音乐api
     $ git clone https://github.com/bigzjk/miguMusic-api.git
     $ yarn || npm install
     $ npm run nodedev
-可在浏览器输入127.0.0.1:3456/client_play_list_tag ,查看是否跑成功；
+可在浏览器输入http://127.0.0.1:3456/client_play_list_tag ,查看是否跑成功；
 ```
 ## apiList
 - 首页
