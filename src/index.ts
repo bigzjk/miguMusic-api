@@ -17,7 +17,7 @@ const Router = express.Router()
 // import router from './router'
 const apiList = require('./apiList/index')
 const app = express()
-const port = process.env.port || 3456
+const port = process.env.PORT || 3456
 
 app.use('/node_modules/', express.static('../node_modules/'))
 app.use('/public/', express.static('../public/'))
@@ -39,6 +39,6 @@ app.use(apiList(Router))
 /* 监听端口启动服务 */
 app.listen(port, ()=>{
   
-  console.log(`Example app listening on 127.0.0.1:${port}`)
+  console.log(`Example app listening on http://127.0.0.1:${port}`)
 })
 
