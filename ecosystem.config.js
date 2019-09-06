@@ -4,7 +4,7 @@ module.exports = {
         script: 'dist/index.js',   //应用文件位置
         env: {
             PM2_SERVE_PATH: ".",    //静态服务路径
-            PM2_SERVE_PORT: 6688,   //静态服务器访问端口
+            PM2_SERVE_PORT: 3456,   //静态服务器访问端口
             NODE_ENV: 'development' //启动默认模式
         },
         env_production: {
