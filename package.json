@@ -9,7 +9,7 @@
     "nodedev": "cd src && ts-node-dev index.ts",
     "tsnode": "ts-node src/index.ts",
     "build": "webpack",
-    "push": "pm2 deploy ecosystem.config.js production"
+    "push": "pm2 deploy ecosystem.config.js production setup"
   },
   "repository": {
     "type": "git",
