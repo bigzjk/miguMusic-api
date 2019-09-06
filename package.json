@@ -5,12 +5,11 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "nodemon": "cd src && nodemon index.js",
     "nodedev": "cd src && ts-node-dev index.ts",
     "tsnode": "ts-node src/index.ts",
     "build": "webpack",
     "setup": "pm2 deploy ecosystem.config.js production setup",
-    "push": "pm2 deploy ecosystem.config.js production"
+    "push": " pm2 deploy ecosystem.config.js production"
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,7 @@ module.exports = {
         script: 'scr/index.ts',   //应用文件位置
         env: {
             PM2_SERVE_PATH: ".",    //静态服务路径
-            PM2_SERVE_PORT: 8080,   //静态服务器访问端口
+            PM2_SERVE_PORT: 6688,   //静态服务器访问端口
             NODE_ENV: 'development' //启动默认模式
         },
         env_production: {
@@ -25,7 +25,7 @@ module.exports = {
             ref: 'origin/master',             //GIT远程/分支
             repo: 'git@github.com:bigzjk/miguMusic-api.git',   //git地址
             path: '/var/www/production',       //服务器文件路径
-            'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'  //部署后的动作
+            'post-deploy': 'npm install && tsc && pm2 reload ecosystem.config.js --env production'  //部署后的动作
         },
         dev : {
             user : "root",
