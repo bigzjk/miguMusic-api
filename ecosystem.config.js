@@ -1,7 +1,7 @@
 module.exports = {
     apps: [{
         name: 'miguApi',      //应用名
-        script: 'scr/index.ts',   //应用文件位置
+        script: 'dist/index.js',   //应用文件位置
         env: {
             PM2_SERVE_PATH: ".",    //静态服务路径
             PM2_SERVE_PORT: 6688,   //静态服务器访问端口
