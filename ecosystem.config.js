@@ -20,7 +20,7 @@ module.exports = {
     }],
     deploy: {
         production: {
-            user: 'ubuntu',                   //ssh 用户
+            user: 'root',                   //ssh 用户
             host: '47.98.165.188',            //ssh 地址
             ref: 'origin/master',             //GIT远程/分支
             repo: 'git@github.com:bigzjk/miguMusic-api.git',   //git地址
