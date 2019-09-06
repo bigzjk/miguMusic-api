@@ -10,7 +10,7 @@
     "build": "webpack",
     "tscc": "tsc",
     "setup": "pm2 deploy ecosystem.config.js production setup",
-    "push": "npm run tscc && pm2 deploy ecosystem.config.js production"
+    "push": "pm2 deploy ecosystem.config.js production"
   },
   "repository": {
     "type": "git",
