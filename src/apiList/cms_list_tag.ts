@@ -12,8 +12,9 @@ module.exports = (app) => {
                 // ?nid=23831003&type=2006&pageNo=0&pageSize=10
                 url: "cms_list_tag",
                 data: { 
-                    nid: req.query.nid,
-                    type: req.query.type
+                    ...req.query,
+                    // nid: req.query.nid,
+                    // type: req.query.type
                 }
             })
             // console.log(result.data)

@@ -11,14 +11,10 @@ interface IParamsInfo {
     data?: any,
     params?: any,
 }
-// Lib a.d.ts
-// interface IParams {
-//     data: any
-// }
 
-module.exports = (opt) =>{
+module.exports = (opt: any) =>{
     let paramsInfo:IParamsInfo = {
-        baseURL: 'http://m.music.migu.cn/migu/remoting',
+        baseURL: 'http://m.music.migu.cn/migu/remoting/',
         method: opt.type || 'get',
         url: opt.url,
         headers: {

@@ -1,8 +1,9 @@
 /**
- * @todo 推荐歌单首页推荐模块
+ * @todo 详情页列表模块
  * @api /client_play_list_tag
- * @param {string} nid
- * @param {string} type
+ * @param {string} niplayListIdd
+ * @param {string} playListType
+ * @param {string} contentCount
  */
 module.exports = (app) => {
     app.get('/playlistcontents_query_tag', async (req, res) => {
@@ -10,9 +11,10 @@ module.exports = (app) => {
             let result = await app.request({
                 url: "playlistcontents_query_tag",
                 data: { 
-                    playListId: req.query.playListId,
-                    playListType: req.query.playListType,
-                    contentCount: req.query.contentCount,
+                    // playListId: req.query.playListId,
+                    // playListType: req.query.playListType,
+                    // contentCount: req.query.contentCount,
+                    ...req.query
                 }
             })
             res.send(result.data)

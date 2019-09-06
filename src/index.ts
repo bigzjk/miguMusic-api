@@ -15,6 +15,7 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 const Router = express.Router()
 // import router from './router'
+// api路由中间件
 const apiList = require('./apiList/index')
 const app = express()
 const port = process.env.PORT || 3456
