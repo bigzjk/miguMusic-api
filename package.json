@@ -8,7 +8,8 @@
     "nodemon": "cd src && nodemon index.js",
     "nodedev": "cd src && ts-node-dev index.ts",
     "tsnode": "ts-node src/index.ts",
-    "build": "webpack"
+    "build": "webpack",
+    "push": "pm2 deploy ecosystem.config.js production"
   },
   "repository": {
     "type": "git",
