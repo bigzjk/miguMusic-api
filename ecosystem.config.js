@@ -25,8 +25,8 @@ module.exports = {
             ref: 'origin/master',             //GIT远程/分支
             repo: 'git@github.com:bigzjk/miguMusic-api.git',   //git地址
             path: '/var/www/production',       //服务器文件路径
-            'post-deploy': 'npm install && tsc && pm2 reload ecosystem.config.js --env production'  //部署后的动作
-        },
+            'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'  //部署后的动作
+        },  
         dev : {
             user : "root",
             host : "47.98.165.188",

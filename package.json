@@ -2,14 +2,14 @@
   "name": "migumusic-api",
   "version": "1.0.0",
   "description": "node实现转发咪咕音乐api",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "nodedev": "cd src && ts-node-dev index.ts",
     "tsnode": "ts-node src/index.ts",
     "build": "webpack",
     "setup": "pm2 deploy ecosystem.config.js production setup",
-    "push": " pm2 deploy ecosystem.config.js production"
+    "push": " tsc && pm2 deploy ecosystem.config.js production"
   },
   "repository": {
     "type": "git",
