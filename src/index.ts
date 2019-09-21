@@ -12,7 +12,7 @@
  */
 // const express = require('express')
 import * as express from 'express';
-import * as bodyParser from 'body-parser';
+// import * as bodyParser from 'body-parser';
 const Router = express.Router()
 // import router from './router'
 // api路由中间件
@@ -20,11 +20,12 @@ const apiList = require('./apiList/index')
 const app = express()
 const port = process.env.PORT || 3456
 
+// 设置静态资源
 app.use('/node_modules/', express.static('../node_modules/'))
 app.use('/public/', express.static('../public/'))
-
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+// express中集成了bodyParser
+// app.use(bodyParser.urlencoded({extended: false}))
+// app.use(bodyParser.json())
 
 // app.set('views', '../views')
 

@@ -12,20 +12,43 @@ interface IParamsInfo {
     params?: any,
 }
 
-module.exports = (opt: any) =>{
-    let paramsInfo:IParamsInfo = {
-        baseURL: 'http://m.music.migu.cn/migu/remoting/',
-        method: opt.type || 'get',
-        url: opt.url,
-        headers: {
-            'User-Agent': userAgent(),
-            // 'Access-Control-Allow-Origin': '*'
+const request = (paramInfo: any) => {
+    function getDataFn(obj) {
+        let getData: IParamsInfo = {
+            url: obj.url,
+            method: obj.method ||'get',
+            baseURL: 'http://m.music.migu.cn/migu/remoting/',
+            headers: {
+                'User-Agent': userAgent(),
+            }
         }
+        if (getData.method == 'get'){
+            getData.params = obj.data
+        } else {
+            getData.data = obj.data
+        }
+        return getData
     }
-    if (paramsInfo.method == 'get'){
-        paramsInfo.params = opt.data
+    
+    if(!Array.isArray(paramInfo)){
+        return axios(getDataFn(paramInfo))
     } else {
-        paramsInfo.data = opt.data
+        let fetchArray = paramInfo.map(v => {
+            return axios(getDataFn(v))
+        })
+        return new Promise((resolve, reject) => {
+            axios.all(fetchArray).then()
+
+            axios.all(fetchArray)
+            .then(axios.spread(function (...arg) {
+                // 多个请求现在都执行完成
+                resolve(arg)
+            })).catch(err => {
+                console.log(err)
+            })
+        })
+
     }
-    return axios(paramsInfo)
 }
+
+module.exports = request
