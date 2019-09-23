@@ -13,8 +13,6 @@ module.exports = (app) => {
                 url: "cms_list_tag",
                 data: { 
                     ...req.query,
-                    // nid: req.query.nid,
-                    // type: req.query.type
                 }
             })
             // console.log(result.data)

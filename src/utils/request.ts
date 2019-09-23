@@ -19,7 +19,7 @@ const request = (paramInfo: any) => {
             method: obj.method ||'get',
             baseURL: 'http://m.music.migu.cn/migu/remoting/',
             headers: {
-                'User-Agent': userAgent(),
+                'User-Agent': obj.ua || userAgent(),
             }
         }
         if (getData.method == 'get'){
